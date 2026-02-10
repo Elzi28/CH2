@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+<rect width='100' height='100' fill='%2304000a'/>
+<text x='50%' y='68%' text-anchor='middle'
+font-size='70'
+fill='%2300ff88'
+font-family='Arial'
+font-weight='bold'>E</text>
+</svg>">
+
+<title>ELZI GANTENG</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+html,body{
+height:100%;
+overflow:hidden;
+}
+
+/* ===== THEME ===== */
+#ungu:checked ~ .wrapper{
+  --bg:linear-gradient(270deg,#2a004a,#4b0082,#6a0dad,#9b5de5);
+  --shadow:#c77dff;
+  --particle:280;
+}
+
+#biru:checked ~ .wrapper{
+  --bg:linear-gradient(270deg,#001f3f,#003366,#0066cc,#00b4d8);
+  --shadow:#48cae4;
+  --particle:200;
+}
+
+#merah:checked ~ .wrapper{
+  --bg:linear-gradient(270deg,#4d0000,#800000,#c1121f,#ff4d6d);
+  --shadow:#ff758f;
+  --particle:350;
+}
+
+#rainbow:checked ~ .wrapper{
+  --bg:linear-gradient(270deg,#003d1f,#006633,#00cc66,#66ffb3);
+  --shadow:#66ffb3;
+  --particle:150;
+}
+
+/* ===== WRAPPER ===== */
+.wrapper{
+  --bg:linear-gradient(270deg,#050008,#12002b,#1a003d);
+  --shadow:#6a0dad;
+  --particle:270;
+
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  font-family:Arial;
+  color:white;
+  background:var(--bg);
+  background-size:200% 200%;
+  animation:bgMove 25s infinite;
+  position:relative;
+  overflow:hidden;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* ===== PARTICLES ===== */
+.particles span{
+  position:absolute;
+  bottom:-20px;
+  border-radius:50%;
+  background:hsla(var(--particle),100%,70%,0.8);
+  box-shadow:0 0 15px hsla(var(--particle),100%,70%,0.9);
+  animation:float linear infinite;
+}
+
+/* variasi ukuran & speed */
+.particles span:nth-child(3n){
+  width:3px;height:3px;animation-duration:18s;
+}
+.particles span:nth-child(3n+1){
+  width:6px;height:6px;animation-duration:12s;
+}
+.particles span:nth-child(3n+2){
+  width:9px;height:9px;animation-duration:15s;
+}
+
+/* posisi random fake */
+.particles span:nth-child(1){left:2%;animation-delay:1s}
+.particles span:nth-child(2){left:8%;animation-delay:3s}
+.particles span:nth-child(3){left:15%;animation-delay:5s}
+.particles span:nth-child(4){left:22%;animation-delay:2s}
+.particles span:nth-child(5){left:30%;animation-delay:4s}
+.particles span:nth-child(6){left:37%;animation-delay:6s}
+.particles span:nth-child(7){left:44%;animation-delay:1s}
+.particles span:nth-child(8){left:50%;animation-delay:7s}
+.particles span:nth-child(9){left:57%;animation-delay:2s}
+.particles span:nth-child(10){left:63%;animation-delay:5s}
+.particles span:nth-child(11){left:70%;animation-delay:3s}
+.particles span:nth-child(12){left:76%;animation-delay:6s}
+.particles span:nth-child(13){left:83%;animation-delay:4s}
+.particles span:nth-child(14){left:90%;animation-delay:1s}
+.particles span:nth-child(15){left:96%;animation-delay:5s}
+
+@keyframes float{
+from{transform:translateY(0)}
+to{transform:translateY(-120vh)}
+}
+
+/* ===== BUTTON SOSMED ===== */
+.btn{
+  width:250px;
+  padding:14px;
+  margin:10px;
+  border-radius:12px;
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+  display:flex;
+  justify-content:center;
+  box-shadow:0 0 18px var(--shadow);
+  transition:0.3s;
+  z-index:2;
+}
+.btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 35px var(--shadow);
+}
+
+.youtube{background:#ff0000}
+.tiktok{background:black}
+.instagram{background:linear-gradient(45deg,#ff7a18,#ff2aa1)}
+
+.elzi{
+  margin-top:20px;
+  font-size:2rem;
+  text-shadow:0 0 25px var(--shadow);
+  z-index:2;
+}
+
+/* ===== THEME BUTTON ===== */
+.themeMenu{
+  position:fixed;
+  top:20px;
+  left:20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:10;
+}
+
+.themeBtn{
+  width:50px;height:50px;border-radius:50%;cursor:pointer;transition:0.3s;
+}
+.themeBtn:hover{transform:scale(1.1)}
+
+.ungu{background:linear-gradient(135deg,#9b5de5,#c77dff)}
+.biru{background:linear-gradient(135deg,#00b4d8,#48cae4)}
+.merah{background:linear-gradient(135deg,#ff4d6d,#ff758f)}
+.rainbow{background:linear-gradient(135deg,#00ff88,#66ffb3,#00cc66)}
+
+#ungu:checked ~ .themeMenu label[for="ungu"],
+#biru:checked ~ .themeMenu label[for="biru"],
+#merah:checked ~ .themeMenu label[for="merah"],
+#rainbow:checked ~ .themeMenu label[for="rainbow"]{
+  box-shadow:0 0 20px white,0 0 40px white;
+  transform:scale(1.15);
+}
+
+</style>
+</head>
+
+<body>
+
+<input type="radio" name="theme" id="ungu" checked hidden>
+<input type="radio" name="theme" id="biru" hidden>
+<input type="radio" name="theme" id="merah" hidden>
+<input type="radio" name="theme" id="rainbow" hidden>
+
+<div class="themeMenu">
+<label for="ungu" class="themeBtn ungu"></label>
+<label for="biru" class="themeBtn biru"></label>
+<label for="merah" class="themeBtn merah"></label>
+<label for="rainbow" class="themeBtn rainbow"></label>
+</div>
+
+<div class="wrapper">
+
+<div class="particles">
+<!-- 60 PARTICLES -->
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<h2>WELCOME 😄</h2>
+
+<a class="btn youtube" href="https://www.youtube.com/@elzidzi291">YouTube</a>
+<a class="btn tiktok" href="https://www.tiktok.com/@elzidzi28">TikTok</a>
+<a class="btn instagram" href="https://www.instagram.com/elzidzi28/">Instagram</a>
+
+<div class="elzi">ELZI</div>
+
+</div>
+
+</body>
+</html>
